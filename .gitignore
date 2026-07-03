@@ -26,6 +26,7 @@ pnpm-debug.log*
 # internal/confidential docs — not for public repo
 4-upgrade-icepack-foods-frozen-food-PRD.md
 DESIGN-SYSTEM.md
+CLAUDE.md
 
 # local Claude Code settings
 .claude/settings.local.json
