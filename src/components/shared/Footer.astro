@@ -1,0 +1,50 @@
+---
+import { RiWhatsappFill, RiInstagramFill, RiTiktokFill, RiFacebookCircleFill } from '@remixicon/react';
+
+const columns = [
+  {
+    heading: 'Produk',
+    links: ['Semua Produk', 'Dimsum', 'Bakso & Pentol', 'Seafood Frozen', 'Healthy Range'],
+  },
+  {
+    heading: 'Bisnis',
+    links: ['Jadi Supplier B2B', 'Program Reseller', 'Download Katalog'],
+  },
+  {
+    heading: 'Perusahaan',
+    links: ['Tentang Kami', 'Resep', 'Kontak'],
+  },
+];
+
+const socials = [
+  { icon: RiWhatsappFill, label: 'WhatsApp' },
+  { icon: RiInstagramFill, label: 'Instagram' },
+  { icon: RiTiktokFill, label: 'TikTok' },
+  { icon: RiFacebookCircleFill, label: 'Facebook' },
+];
+---
+
+<footer class="border-t border-hairline bg-white px-6 py-12 md:px-20">
+  <div class="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 md:grid-cols-3">
+    {columns.map((col) => (
+      <div>
+        <p class="mb-3 text-base font-semibold text-ink">{col.heading}</p>
+        <ul class="space-y-2">
+          {col.links.map((link) => (
+            <li><a href="#" class="text-sm text-body hover:text-ink">{link}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="mx-auto mt-10 flex max-w-[1280px] flex-col items-start justify-between gap-4 border-t border-hairline pt-6 sm:flex-row sm:items-center">
+    <p class="text-xs text-muted">© 2026 IcePack Foods. Halal MUI Tersertifikasi · BPOM.</p>
+    <div class="flex gap-3">
+      {socials.map((s) => (
+        <a href="#" aria-label={s.label} class="text-muted hover:text-primary">
+          <s.icon size={20} />
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

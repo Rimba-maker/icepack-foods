@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {
+  RiRestaurantLine,
+  RiComputerLine,
+  RiHotelLine,
+  RiRestaurant2Line,
+  RiSchoolLine,
+  RiStore2Line,
+  RiDiscountPercentLine,
+  RiCalendarCheckLine,
+  RiFileList3Line,
+  RiUserStarLine,
+  RiArchiveLine,
+  RiRefreshLine,
+  RiFileEditLine,
+  RiPhoneLine,
+  RiRocketLine,
+} from '@remixicon/react';
+
+const bisnisTypes = [
+  { icon: RiRestaurantLine, title: 'Restoran & Warteg', desc: 'Bahan baku konsisten, harga stabil' },
+  { icon: RiComputerLine, title: 'Cloud Kitchen', desc: 'Volume harian, pengiriman terjadwal' },
+  { icon: RiHotelLine, title: 'Hotel & Resort', desc: 'Breakfast buffet, banquet supply' },
+  { icon: RiRestaurant2Line, title: 'Catering & EO', desc: 'Bulk order per event' },
+  { icon: RiSchoolLine, title: 'Kantin Sekolah & Pabrik', desc: 'Supply rutin bulanan' },
+  { icon: RiStore2Line, title: 'Minimarket & Reseller', desc: 'Ready to resell packaging' },
+];
+
+const benefits = [
+  { icon: RiDiscountPercentLine, title: 'Harga Grosir Kompetitif', desc: 'Hemat 20-35% dari harga eceran. Semakin besar volume, semakin baik harganya.' },
+  { icon: RiCalendarCheckLine, title: 'Pengiriman Terjadwal', desc: 'Set jadwal pengiriman per hari, per minggu, atau per bulan. Kami datang tepat waktu.' },
+  { icon: RiFileList3Line, title: 'Invoice & Faktur Pajak', desc: 'Semua transaksi dilengkapi invoice resmi dan faktur pajak (PKP).' },
+  { icon: RiUserStarLine, title: 'Account Manager Dedicated', desc: 'Satu PIC khusus untuk bisnis kamu. WA langsung, respon cepat, bukan bot.' },
+  { icon: RiArchiveLine, title: 'Minimum Order Fleksibel', desc: 'Mulai dari 10 kg untuk trial. Tidak perlu langsung volume besar.' },
+  { icon: RiRefreshLine, title: 'Konsistensi Produk', desc: 'Setiap batch produk dikontrol kualitasnya. Tidak ada perbedaan rasa atau tekstur.' },
+];
+
+const pricingTiers = [
+  { volume: '10–50 kg', discount: '20% off', support: 'Standard (WA)' },
+  { volume: '50–200 kg', discount: '25% off', support: 'Dedicated WA + monthly visit' },
+  { volume: '200–500 kg', discount: '30% off', support: 'Account Manager' },
+  { volume: '500 kg+', discount: '35% off + custom pricing', support: 'Senior Account Manager + priority' },
+];
+
+const steps = [
+  { icon: RiFileEditLine, title: 'Isi Formulir Mitra', desc: 'Data bisnis, kebutuhan produk, estimasi volume per bulan' },
+  { icon: RiPhoneLine, title: 'Konsultasi dengan Tim Kami', desc: 'Account manager kami hubungi dalam 1x24 jam untuk diskusi kebutuhan & pricing' },
+  { icon: RiRocketLine, title: 'Mulai Order', desc: 'Trial order pertama, pengiriman, dan evaluasi kualitas bersama' },
+];
+---
+
+<Layout
+  title="Supplier Frozen Food untuk Restoran & Hotel | IcePack Foods"
+  description="Mitra frozen food untuk restoran, cloud kitchen, hotel, catering, dan kantin. Harga grosir, cold chain terjaga, pengiriman terjadwal."
+>
+  <section class="bg-b2b-canvas-soft px-6 py-16 md:px-20 md:py-24">
+    <div class="mx-auto max-w-[1280px]">
+      <h1 class="max-w-2xl text-3xl font-bold text-ink md:text-5xl">
+        Partner Frozen Food Terpercaya untuk Bisnis F&B Anda.
+      </h1>
+      <p class="mt-4 max-w-xl text-body md:text-lg">
+        Harga grosir, pengiriman terjadwal, cold chain terjaga, dan support account manager
+        dedicated. Bergabunglah dengan 200+ mitra bisnis yang sudah percaya IcePack.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#formulir" class="rounded-full bg-b2b px-6 py-3 font-medium text-white hover:bg-b2b-press">
+          Daftar Jadi Mitra
+        </a>
+        <a href="#" class="rounded-full border border-b2b px-6 py-3 font-medium text-b2b hover:bg-white">
+          Download Catalog B2B
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Untuk Siapa Program Ini?</h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {bisnisTypes.map((b) => (
+          <div class="rounded-b2b border border-hairline p-6">
+            <b.icon className="text-b2b" size={24} />
+            <p class="mt-3 font-semibold text-ink">{b.title}</p>
+            <p class="mt-1 text-sm text-body">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-b2b-canvas-soft px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Keuntungan Jadi Mitra IcePack.</h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {benefits.map((b) => (
+          <div class="rounded-b2b border border-hairline bg-white p-6">
+            <b.icon className="text-b2b" size={24} />
+            <p class="mt-3 font-semibold text-ink">{b.title}</p>
+            <p class="mt-1 text-sm text-body">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Struktur Harga Grosir.</h2>
+      <p class="mt-2 max-w-xl text-body">Harga berdasarkan volume. Semakin besar, semakin hemat.</p>
+
+      <div class="mt-8 overflow-x-auto rounded-b2b border border-hairline">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-b2b-canvas-soft">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-ink">Volume per Bulan</th>
+              <th class="px-4 py-3 font-semibold text-ink">Diskon dari Harga Eceran</th>
+              <th class="px-4 py-3 font-semibold text-ink">Support Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricingTiers.map((tier) => (
+              <tr class="border-t border-hairline">
+                <td class="px-4 py-3 font-mono text-ink">{tier.volume}</td>
+                <td class="px-4 py-3 font-mono font-semibold text-b2b">{tier.discount}</td>
+                <td class="px-4 py-3 text-body">{tier.support}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-muted">Harga final setelah konsultasi dan survey kebutuhan.</p>
+    </div>
+  </section>
+
+  <section class="bg-b2b-canvas-soft px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">3 Langkah Jadi Mitra IcePack.</h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {steps.map((step, i) => (
+          <div class="rounded-b2b border border-hairline bg-white p-6">
+            <step.icon className="text-b2b" size={24} />
+            <p class="mt-3 font-semibold text-ink">{i + 1}. {step.title}</p>
+            <p class="mt-1 text-sm text-body">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="formulir" class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Download Katalog Produk & Harga B2B.</h2>
+      <form class="mt-6 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
+        <input class="rounded-input-b2b border border-hairline px-4 py-3 text-sm sm:col-span-1" placeholder="Nama" name="nama" />
+        <input class="rounded-input-b2b border border-hairline px-4 py-3 text-sm sm:col-span-1" placeholder="Nama Bisnis" name="bisnis" />
+        <input class="rounded-input-b2b border border-hairline px-4 py-3 text-sm sm:col-span-1" placeholder="WhatsApp" name="wa" />
+        <input class="rounded-input-b2b border border-hairline px-4 py-3 text-sm sm:col-span-1" placeholder="Email" name="email" type="email" />
+        <select class="rounded-input-b2b border border-hairline px-4 py-3 text-sm sm:col-span-2" name="tipe">
+          <option value="">Tipe Bisnis</option>
+          {bisnisTypes.map((b) => <option value={b.title}>{b.title}</option>)}
+        </select>
+        <button type="submit" class="rounded-full bg-b2b px-6 py-3 font-medium text-white hover:bg-b2b-press sm:col-span-2">
+          Download Katalog Gratis
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>

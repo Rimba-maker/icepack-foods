@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/homepage/Hero';
+import WhoWeServe from '../components/homepage/WhoWeServe';
+import ProductCategories from '../components/homepage/ProductCategories';
+import BestSellers from '../components/homepage/BestSellers';
+import WhyIcePack from '../components/homepage/WhyIcePack';
+import B2BHighlight from '../components/homepage/B2BHighlight';
+import ColdChain from '../components/homepage/ColdChain';
+import RecipeInspiration from '../components/homepage/RecipeInspiration';
+import Testimonial from '../components/homepage/Testimonial';
+import CoverageArea from '../components/homepage/CoverageArea.astro';
+import CTASplit from '../components/homepage/CTASplit.astro';
+---
+
+<Layout
+  title="IcePack Foods — Frozen Food Premium, B2C & B2B Supplier"
+  description="Brand & supplier frozen food terpercaya. 500+ produk: dimsum, bakso, nugget, seafood, healthy range. Untuk dapur rumah & dapur bisnis."
+>
+  <Hero client:load />
+  <WhoWeServe client:visible />
+  <ProductCategories client:visible />
+  <BestSellers client:visible />
+  <WhyIcePack client:visible />
+  <B2BHighlight client:visible />
+  <ColdChain client:visible />
+  <RecipeInspiration client:visible />
+  <Testimonial client:visible />
+  <CoverageArea />
+  <CTASplit />
+</Layout>

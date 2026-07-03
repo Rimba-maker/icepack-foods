@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { RiCheckLine, RiMedalLine, RiMedal2Line, RiTrophyFill } from '@remixicon/react';
+
+const whyResell = [
+  'Brand yang sudah dikenal di kota',
+  'Margin 25-35% dari harga eceran',
+  'Bisa mulai kecil (min. order 5 kg)',
+  'Training product knowledge gratis',
+  'Free marketing kit (foto produk, caption, template IG)',
+  'Dukungan WA grup reseller',
+];
+
+const tiers = [
+  { icon: RiMedalLine, name: 'Reseller Basic', min: 'Min. 5 kg/bulan', perks: ['Diskon 25% dari harga eceran', 'Support WA grup', 'Free foto produk digital'] },
+  { icon: RiMedal2Line, name: 'Reseller Silver', min: 'Min. 20 kg/bulan', perks: ['Diskon 30% dari harga eceran', 'Priority stock', 'Free banner digital + caption kit', 'Nama masuk di "Cari Reseller Terdekat"'] },
+  { icon: RiTrophyFill, name: 'Reseller Gold', min: 'Min. 50 kg/bulan', perks: ['Diskon 35% dari harga eceran', 'Cold storage kecil dipinjamkan', 'Dedicated support', 'Feature di sosmed IcePack'] },
+];
+---
+
+<Layout
+  title="Program Reseller Frozen Food | IcePack Foods"
+  description="Jadi reseller frozen food IcePack. Margin 25-35%, support marketing, min. order 5 kg. Daftar gratis."
+>
+  <section class="bg-bg-warm px-6 py-16 md:px-20 md:py-24">
+    <div class="mx-auto max-w-[1280px]">
+      <h1 class="max-w-2xl text-3xl font-bold text-ink md:text-5xl">
+        Jual Frozen Food Premium. Profit Nyata.
+      </h1>
+      <p class="mt-4 max-w-xl text-body md:text-lg">
+        Bergabunglah dengan program reseller IcePack. Jual dari rumah atau toko, harga spesial,
+        support marketing tersedia.
+      </p>
+      <a href="#" class="mt-6 inline-block rounded-sm bg-primary px-6 py-3 font-medium text-white hover:bg-primary-active">
+        Daftar Jadi Reseller
+      </a>
+    </div>
+  </section>
+
+  <section class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Kenapa Resell IcePack?</h2>
+      <ul class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {whyResell.map((reason) => (
+          <li class="flex items-center gap-2 rounded-b2c border border-hairline bg-white px-4 py-3 text-sm text-body">
+            <RiCheckLine className="shrink-0 text-primary" size={16} /> {reason}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-surface px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h2 class="text-2xl font-bold text-ink md:text-3xl">Reseller Tiers.</h2>
+      <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {tiers.map((tier) => (
+          <div class="rounded-b2c border border-hairline bg-white p-6">
+            <tier.icon className="text-primary-warm" size={28} />
+            <p class="mt-2 text-xl font-semibold text-ink">{tier.name}</p>
+            <p class="mt-1 text-sm text-muted">{tier.min}</p>
+            <ul class="mt-4 space-y-2">
+              {tier.perks.map((perk) => (
+                <li class="text-sm text-body">• {perk}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import { RiShoppingBasketFill, RiTeamLine } from '@remixicon/react';
+---
+
+<section class="px-6 py-16 md:px-20">
+  <div class="mx-auto max-w-[1280px]">
+    <h2 class="text-2xl font-bold text-ink md:text-3xl">Mau Mulai Dari Mana?</h2>
+
+    <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div class="rounded-b2c border border-hairline bg-bg-warm p-8">
+        <p class="flex items-center gap-2 text-xl font-semibold text-ink">
+          <RiShoppingBasketFill className="text-primary" size={22} /> Beli Untuk Keluarga
+        </p>
+        <p class="mt-3 text-body">
+          Belanja frozen food untuk stok dapur rumah. Order online, dikirim fresh & dingin. Gratis
+          ongkir > Rp 200k.
+        </p>
+        <a href="/produk/" class="mt-5 inline-block rounded-sm bg-primary px-6 py-3 font-medium text-white hover:bg-primary-active">
+          Order Sekarang →
+        </a>
+      </div>
+
+      <div class="rounded-b2b border border-hairline bg-b2b-canvas-soft p-8">
+        <p class="flex items-center gap-2 text-xl font-semibold text-ink">
+          <RiTeamLine className="text-b2b" size={22} /> Daftar Sebagai Mitra Bisnis
+        </p>
+        <p class="mt-3 text-body">
+          Dapatkan harga grosir, pengiriman terjadwal, dan dedicated account manager. Untuk restoran,
+          hotel, catering, dan reseller.
+        </p>
+        <a href="/supplier/" class="mt-5 inline-block rounded-full bg-b2b px-6 py-3 font-medium text-white hover:bg-b2b-press">
+          Konsultasi B2B →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { RiCheckboxCircleFill } from '@remixicon/react';
+
+const areas = [
+  'Kota [Nama Kota] — Free delivery untuk order > Rp 200k',
+  'Kabupaten sekitar — Delivery tersedia, ongkir sesuai jarak',
+  'B2B: pengiriman ke luar kota untuk volume > 50 kg',
+];
+---
+
+<section class="bg-surface px-6 py-16 md:px-20">
+  <div class="mx-auto max-w-[1280px]">
+    <h2 class="text-2xl font-bold text-ink md:text-3xl">Area Distribusi Kami.</h2>
+    <ul class="mt-6 space-y-2">
+      {areas.map((area) => (
+        <li class="flex items-center gap-2 text-body">
+          <RiCheckboxCircleFill className="shrink-0 text-primary-warm" size={18} /> {area}
+        </li>
+      ))}
+    </ul>
+    <p class="mt-4 text-sm text-muted">Armada: 3 motor box berpendingin + 1 mobil freezer</p>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const resep = await getCollection('resep');
+---
+
+<Layout
+  title="Resep Masak dengan Frozen Food | IcePack Foods"
+  description="Inspirasi resep simpel menggunakan produk frozen food IcePack. Siap 15 menit, lezat seperti restoran."
+>
+  <section class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h1 class="text-2xl font-bold text-ink md:text-3xl">Resep Masak dengan IcePack.</h1>
+
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {resep.map((r) => (
+          <a href={`/resep/${r.id}/`} class="rounded-b2c border border-hairline bg-white p-4 hover:shadow-md">
+            <div class="aspect-video rounded-sm bg-bg-warm" />
+            <p class="mt-3 font-semibold text-ink">{r.data.title}</p>
+            <p class="mt-1 text-xs text-muted">{r.data.kategori} · {r.data.waktuMasak}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

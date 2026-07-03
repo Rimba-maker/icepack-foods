@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const resep = await getCollection('resep');
+  return resep.map((r) => ({ params: { slug: r.id }, props: { r } }));
+}
+
+const { r } = Astro.props;
+const { Content } = await render(r);
+---
+
+<Layout title={`${r.data.title} | IcePack Foods`} description={`Resep ${r.data.title} pakai produk IcePack.`}>
+  <article class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-2xl">
+      <h1 class="text-2xl font-bold text-ink md:text-3xl">{r.data.title}</h1>
+      <p class="mt-2 text-sm text-muted">
+        {r.data.kategori} · Prep {r.data.waktuPrep} · Masak {r.data.waktuMasak} · {r.data.porsi}
+      </p>
+      <p class="mt-4 text-sm text-body">
+        Bahan: {r.data.produk.join(', ')}
+      </p>
+      <div class="prose mt-6 max-w-none text-body">
+        <Content />
+      </div>
+      <a href="/produk/" class="mt-6 inline-block rounded-sm bg-primary px-6 py-3 font-medium text-white hover:bg-primary-active">
+        Beli Produk di IcePack →
+      </a>
+    </div>
+  </article>
+</Layout>

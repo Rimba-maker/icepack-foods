@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const kategori = ['Dimsum', 'Bakso & Siomay', 'Nugget & Sosis', 'Seafood', 'Sayuran', 'Ready to Eat', 'Healthy Range', 'Dessert', 'Western'];
+---
+
+<Layout
+  title="Semua Produk Frozen Food | IcePack Foods"
+  description="Browse 500+ produk frozen food IcePack. Dimsum, bakso, nugget, seafood, sayuran, ready to eat, healthy range & dessert beku."
+>
+  <section class="px-6 py-16 md:px-20">
+    <div class="mx-auto max-w-[1280px]">
+      <h1 class="text-2xl font-bold text-ink md:text-3xl">Semua Produk IcePack.</h1>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <input
+          type="search"
+          placeholder="Cari nama produk..."
+          class="w-full max-w-xs rounded-input-b2b border border-hairline px-4 py-2 text-sm"
+        />
+        {kategori.map((k) => (
+          <button class="rounded-full border border-hairline px-4 py-2 text-xs font-medium text-body hover:bg-surface">
+            {k}
+          </button>
+        ))}
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <p class="col-span-full text-sm text-muted">Produk akan tampil di sini setelah katalog terhubung.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
